@@ -1,0 +1,10 @@
+ipykernel
+pandas
+numpy==1.26.4
+scikit-learn
+xgboost
+catboost
+Flask
+dill
+fastapi[standard]
+streamlit
