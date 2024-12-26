@@ -1,22 +1,26 @@
 # 🚗 Car Sales Prediction - Data Science Project
 
-Welcome to the **Car Sales Prediction Project**! 🚀 This project aims to predict the sale price of used cars using **Linear Regression** and advanced regression techniques. We ensure robust analysis by performing extensive EDA, outlier detection, and assumption checks.
+Welcome to the **Car Sales Prediction Project**! 🚀 This project aims to predict the maths score of students using **Linear Regression** and advanced regression techniques. We ensure robust analysis by performing extensive EDA, outlier detection, and assumption checks.
 
 ---
 
 ## 🧰 Project Structure
 ```
 📂 project-root/
-├── 📁 data/              # Dataset directory
-├── 📁 models/            # Trained models
-├── 📁 notebooks/         # Jupyter Notebooks for EDA and experiments
-├── 📁 src/               # Source code for ML pipeline
-│   ├── dbfeeder.py       # Data ingestion & preprocessing
-│   ├── train.py          # Model training (Linear, Ridge, Lasso, ElasticNet)
-│   ├── inference.py      # Inference and prediction
-│   └── api.py            # FastAPI integration
-├── 📁 reports/           # Model performance reports
-└── README.md             # You're here!
+├── 📁 artifacts/                     # saved pickle files
+├── 📁 data/                          # Dataset directory
+├── 📁 src                            
+│   ├── 📁 components                 # Data ingestion & preprocessing
+         ├── data_ingestion.py        # data reading and splitting
+│        ├── data_transformation.py   # feature transformation
+│        └── model_trainer.py         # Model training (Linear, Ridge, Lasso, ElasticNet)
+|   ├── 📁 pipelines
+│        ├── predict_pipeline.py      # predict pipelie which communicates with components to Flask
+│   ├── exception.py                  # Inference and prediction
+    ├── logger.py                     #logging
+│   └── utils.py                      # utils for saveling loading models
+├── 📁 template/                      #Flask templates
+└── README.md                         # You're here!
 ```
 
 ---
@@ -43,29 +47,18 @@ pip install -r requirements.txt
    git clone https://github.com/username/car-sales-prediction.git
    cd car-sales-prediction
    ```
-2. **Prepare Data**
+2. **Data preparation - Model training**
    ```bash
-   python src/dbfeeder.py
+   python src/data_ingestion.py
    ```
 3. **Perform EDA**
    ```bash
    python notebooks/eda.ipynb
    ```
-4. **Train the Model**
+
+6. **Launch Flask App**
    ```bash
-   python src/train.py
-   ```
-5. **Run Inference**
-   ```bash
-   python src/inference.py
-   ```
-6. **Launch Streamlit App**
-   ```bash
-   streamlit run app.py
-   ```
-7. **Start FastAPI Server**
-   ```bash
-   uvicorn src.api:app --reload
+   python app.py
    ```
 
 ---
@@ -93,13 +86,4 @@ pip install -r requirements.txt
 ## 📜 License
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
----
-
-## 🤝 Contributing
-Pull requests are welcome! For major changes, please open an issue first to discuss what you would like to change.
-
----
-
-## 📧 Contact
-For questions or collaboration, reach out at [your-email@example.com](mailto:your-email@example.com).
 
