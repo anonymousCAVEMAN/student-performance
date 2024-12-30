@@ -42,21 +42,16 @@ pip install -r requirements.txt
 ---
 
 ## 🚀 Quickstart
-1. **Clone the Repository**
-   ```bash
-   git clone https://github.com/username/car-sales-prediction.git
-   cd car-sales-prediction
-   ```
-2. **Data preparation - Model training**
+1. **Data preparation - Model training**
    ```bash
    python src/data_ingestion.py
    ```
-3. **Perform EDA**
+2. **Perform EDA**
    ```bash
    python notebooks/eda.ipynb
    ```
 
-6. **Launch Flask App**
+3. **Launch Flask App**
    ```bash
    python app.py
    ```
@@ -65,11 +60,8 @@ pip install -r requirements.txt
 
 ## 📊 Model Performance
 | Model                 | R2 Score  |
-|----------------------|-----------|
+|-----------------------|-----------|
 | Linear Regression     | 88%       |
-| Ridge Regression      | 90%       |
-| Lasso Regression      | 91%       |
-| Polynomial (2nd Order)| 93%       |
 | Polynomial (5th Order)| **95%**   |
 
 ---
